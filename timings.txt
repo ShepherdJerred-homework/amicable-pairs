@@ -1,0 +1,8 @@
+Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz (dual core)
+
+Block scheduling                                    | 13794299601ns
+Block interleaved scheduling, with blocks of 10,000 | 17085594607ns
+Block interleaved scheduling, with blocks of 100    | 17111892320ns
+Dynamic scheduling, with blocks of size 10,000      | 15318222577ns
+Dynamic scheduling, with blocks of size 100         | 8945600723ns
+
