@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Comp 425 Homework</title>
+    <link rel="stylesheet" href="../standard.css" type="text/css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <base target="_top"/>
+    <style>
+      ol > li { margin-bottom: 2em; }
+      ol ol > li, ol ul > li { margin: 0.5em 0; }
+      ol { list-style-type: decimal; }
+      ol ol { list-style-type: lower-alpha; }
+      .svg { height: 12em; display: block; }
+      .figure {
+          padding: 1em;
+          border: 1px solid black;
+      }
+      .figure .source {
+          font-size: 9pt;
+          padding-top: 2pt;
+      }
+      .right { float: right; margin-left: 1em; }
+      .left { float: left; margin-right: 1em; }
+      h3 { clear: both; padding-top: 1em; }
+    </style>
+  </head>
+  <body>
+    <h3>Background</h3>
+    <p>
+      Two numbers, \(i\) and \(j\) are said to be <dfn>amicable pairs</dfn> if
+      the sum of the proper factors of \(i\) gives you \(j\), and the sum of
+      the factors of \(j\) gives you \(i\).  For example, 220 and 284 are
+      amicable pairs because the sum of the proper factors of 220 is:
+    </p>
+    <blockquote>
+      \(1 + 2 + 4 + 5 + 10 + 11 + 22 + 44 + 55 + 110 = 284\)
+    </blockquote>
+    <p>
+      and the sum of the factors of 284 is:
+    </p>
+    <blockquote>
+      \(1 + 2 + 4 + 71 + 142 = 220\)
+    </blockquote>
+    <p>
+      Numbers which are amicable pairs with themselves are
+      called <dfn>perfect numbers</dfn>.  For example, 6 is a perfect number
+      because the sum of the proper factors of 6 are:
+    </p>
+    <blockquote>
+      \(1 + 2 + 3 = 6\)
+    </blockquote>
+    <h3>Requirements</h3>
+    <p>
+      You are to write a program that finds all amicable pairs less than
+      200,000.  You must do this as follows:
+    </p>
+    <ol>
+      <li>Create a vector, \(v\), of size 200,000.</li>
+      <li>
+        Fill each element of the vector with the sum of the factors of the
+        index.
+        \[v_i = \sum_{1 \le f \lt i}^{i \% f == 0} f \]
+      </li>
+      <li>
+        Look for numbers \(i\) and \(j\) such that \(v_i = j\) and \(v_j =
+        i\), and print them out.
+      </li>
+    </ol>
+    <p>
+      You should parallelize step 2: calculating the sum of the factors.  Then
+      you should time this step using different scheduling algorithms.  In
+      particular, you should use
+    </p>
+    <ul>
+      <li>Block scheduling</li>
+      <li>Block interleaved scheduling, with blocks of 10,000</li>
+      <li>Block interleaved scheduling, with blocks of 100</li>
+      <li>Dynamic scheduling, with blocks of size 10,000</li>
+      <li>Dynamic scheduling, with blocks of size 100</li>
+    </ul>
+  </body>
+</html>
